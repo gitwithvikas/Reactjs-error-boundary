@@ -8,9 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-Description - Understanding Error Boundary how to use it and how to handle error without crashing the whole page.
-
-
 # FAQ - 
 
 ### Why we need Error Boundary in ReactJs?
