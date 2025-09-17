@@ -8,26 +8,27 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
+Description - Understanding Error Boundary how to use it and how to handle error without crashing the whole page.
+
 
 # FAQ - 
 
-1) Why we need Error Boundary in ReactJs?
+### Why we need Error Boundary in ReactJs?
 
- Ans - Error Boundary is a component that catches errors in any of its child components and displays a fallback UI instead of the component tree that crashed.
-
-
-2) Why we need componentDidCatch hook in Error Boundary?
-
- Ans - componentDidCatch is a lifecycle method that is called when an error occurs in a child component. It allows you to handle the error and display a fallback UI.
+ Error Boundary is a component that catches errors in any of its child components and displays a fallback UI instead of the component tree that crashed.
 
 
-3) It only work when?-
+### Why we need componentDidCatch hook in Error Boundary?
 
-Ans - It only work when Crash happen during rendering, inside useEffect, inside Custom hook.
+componentDidCatch is a lifecycle method that is called when an error occurs in a child component. It allows you to handle the error and display a fallback UI.
 
-4) When it will not work?
 
-Ans - 
+### It only work when?-
+
+It only work when Crash happen during rendering, inside useEffect, inside Custom hook.
+
+### When it will not work?
+
      Inside Event handler 
      Inside setTimeout
      Inside async code 
@@ -35,17 +36,19 @@ Ans -
 so if it will not work in above case then we need to use Custom hook to trigger Error boundary.
 
 
-5) Do i have always create Error Boundary in my component?
+### Do i have always create Error Boundary in my component?
 
-Ans - First of all Error Boundary only work with class component so we can use it otherwise we can use liberary for handle Error Boundary in ReactJs called [react-error-boundary].
+First of all Error Boundary only work with class component so we can use it otherwise we can use liberary for handle Error Boundary in ReactJs called [react-error-boundary](https://www.npmjs.com/package/react-error-boundary)
 Behind the scene liberary also use the same class component way to handle error.
 
-6) Do i have to wrap every component with Error Boundary?
+### Do i have to wrap every component with Error Boundary?
 
-Ans - No, we can use Error Boundary in Section of code where we want to handle error.
+No, we can use Error Boundary in **Section** of code where we want to handle error.
       Like we have navbar,sidebar,footer and dashboard component so we can wrap them with Error Boundary.If any one of section crash then it will show fallback UI not whole page.
 
 
+#### Example of Section - 
 
+ <img src="src/assets/images//section_image.png" alt='section-image' />
 
-
+Here Only Footer have error so it will show fallback UI not whole page.
